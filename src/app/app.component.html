@@ -1,3 +1,35 @@
+<a href="#content" class="sr-only sr-only-focusable">Aller au contenu</a>
+<header role="banner">
+  <nav role="navigation" arial-label="menu principal">
+    <ul>
+      <li>
+        <a [routerLink]="['/']">{{ title }}</a>
+      </li>
+      <li>
+        <a [routerLink]="['/patterns']" routerLinkActive="active" appAriaCurrentPage #rla="routerLinkActive">Patterns</a>
+      </li>
+      <li>
+        <a [routerLink]="['/profile']" routerLinkActive="active" appAriaCurrentPage #rla="routerLinkActive">Profile</a>
+      </li>
+    </ul>
+  </nav>
+</header>
 <main>
-  <h1>{{ title }}</h1>
+  <h1 id="content">Content</h1>
+  <ul class="content-blocks">
+    <li>
+      <p>Vous pouvez explorer les patterns.</p>
+      <a [routerLink]="['/patterns']" routerLinkActive="active" appAriaCurrentPage #rla="routerLinkActive">Voir plus</a>
+    </li>
+    <li>
+      <p>Vous pouvez consulter votre profile.</p>
+      <a [routerLink]="['/profile']" routerLinkActive="active" appAriaCurrentPage #rla="routerLinkActive">Voir plus</a>
+    </li>
+  </ul>
+  <router-outlet></router-outlet>
 </main>
+<footer>
+  <p>
+    Contact: mikael.matpadoa-group.com
+  </p>
+</footer>
