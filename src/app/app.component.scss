@@ -19,6 +19,9 @@ nav > ul {
   display: flex;
   > li:not(:last-child) {
     margin-right: 12px;
+    a.active {
+      text-decoration: underline;
+    }
   }
   margin: 0;
   padding-left: 20px;
@@ -34,10 +37,6 @@ nav > ul {
     margin: 0;
     padding: 20px;
   }
-}
-
-a.active {
-  text-decoration: underline;
 }
 
  a {
