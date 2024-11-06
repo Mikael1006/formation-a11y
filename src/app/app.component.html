@@ -1,4 +1,4 @@
-<a href="#content" class="sr-only sr-only-focusable">Aller au contenu</a>
+<button (click)="content.focus()" class="sr-only sr-only-focusable">Aller au contenu</button>
 <header role="banner">
   <nav role="navigation" arial-label="menu principal">
     <ul>
@@ -15,7 +15,7 @@
   </nav>
 </header>
 <main>
-  <h1 id="content">Content</h1>
+  <h1 tabindex="-1" #content>Content</h1>
   <ul class="content-blocks">
     <li>
       <p>Vous pouvez explorer les patterns.</p>
