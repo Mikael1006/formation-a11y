@@ -37,8 +37,13 @@ nav > ul {
 }
 
 a.active {
-  color: red;
+  text-decoration: underline;
 }
+
+ a {
+  color: unset;
+  text-decoration: unset;
+ }
 
 .sr-only {
 	border: 0 !important;
