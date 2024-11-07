@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, ElementRef, inject, input } from '@angular/core';
+import { booleanAttribute, ChangeDetectionStrategy, Component, ElementRef, inject, input } from '@angular/core';
 import { InputFieldComponent } from '../input-field/input-field.component';
 import { ControlContainer, NgControl, NgModel } from '@angular/forms';
 
@@ -19,6 +19,7 @@ let nextId = 0;
     '[class.error]': 'field.getHasError()',
     '[attr.aria-invalid]': 'field.getHasError()',
     '[attr.aria-describedby]': 'field.subLabelId + " " + field.errorId',
+    '[required]': 'required()',
   }
 })
 export class InputComponent {
@@ -27,4 +28,5 @@ export class InputComponent {
   field: InputFieldComponent = inject(InputFieldComponent);
 
   id = input(`input-${nextId++}`);
+  required = input(false, { transform: booleanAttribute });
 }
