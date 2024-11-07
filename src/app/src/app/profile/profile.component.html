@@ -45,11 +45,42 @@
     </ng-container>
   </app-input-field>
 
+  <fieldset>
+    <legend>Date de naissance</legend>
+
+    <app-input-field>
+      Jour
+      <input app-input ngModel="" name="jour">
+      <ng-container error>
+        Veuillez renseignez votre jour, ce champ est obligatoire
+      </ng-container>
+    </app-input-field>
+
+    <app-input-field>
+      mois
+      <input app-input ngModel="" name="mois">
+      <ng-container error>
+        Veuillez renseignez votre mois, ce champ est obligatoire
+      </ng-container>
+    </app-input-field>
+
+    <app-input-field>
+      Année
+      <input app-input ngModel="" name="annee">
+      <ng-container error>
+        Veuillez renseignez votre année, ce champ est obligatoire
+      </ng-container>
+    </app-input-field>
+  </fieldset>
+
   <app-input-field>
     Email
     <input app-input [(ngModel)]="email" name="email" required>
     <ng-container error>
       Veuillez renseignez votre email, ce champ est obligatoire
+    </ng-container>
+    <ng-container subLabel>
+      xxx&#64;email.com
     </ng-container>
   </app-input-field>
 

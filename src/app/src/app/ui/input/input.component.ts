@@ -15,7 +15,7 @@ let nextId = 0;
   styleUrl: './input.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
-    '[attr.id]': 'id',
+    '[attr.id]': 'id()',
     '[class.error]': 'field.getHasError()',
     '[attr.aria-invalid]': 'field.getHasError()',
     '[attr.aria-describedby]': 'field.subLabelId + " " + field.errorId',
