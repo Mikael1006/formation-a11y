@@ -1,4 +1,7 @@
 <label [attr.for]="id">
   <ng-content></ng-content>
+  @if (required()) {
+    *
+  }
 </label>
-<input [id]="id" [ngModel]="value()" (ngModelChange)="value.set($event)">
+<input [id]="id" [ngModel]="value()" (ngModelChange)="value.set($event)" [required]="required()">

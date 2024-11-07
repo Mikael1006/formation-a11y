@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { ChangeDetectionStrategy, Component, model } from '@angular/core';
+import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
 
 let nextId = 0;
 
@@ -18,4 +18,6 @@ let nextId = 0;
 export class InputFieldComponent {
   id = `input-field-${nextId++}`;
   value = model('');
+
+  required = input(false);
 }
