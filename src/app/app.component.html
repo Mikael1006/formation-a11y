@@ -3,7 +3,7 @@
   <nav role="navigation" arial-label="menu principal">
     <ul>
       <li>
-        <a [routerLink]="['/']">{{ title }}</a>
+        <a [routerLink]="['/cards']" routerLinkActive="active" appAriaCurrentPage>Cards</a>
       </li>
       <li>
         <a [routerLink]="['/patterns']" routerLinkActive="active" appAriaCurrentPage>Patterns</a>
@@ -16,24 +16,6 @@
 </header>
 <main>
   <h1 tabindex="-1" #content>Content</h1>
-  <ul class="cards">
-    <li class="css-card">
-      <p>Vous pouvez explorer les patterns.</p>
-      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt officia, maxime molestias qui asperiores iusto eos ipsam magni, labore eum saepe totam placeat in velit quo, eveniet aliquam atque cumque.</p>
-      <a [routerLink]="['/patterns']">Voir plus</a>
-    </li>
-    <li (click)="onCardClick()">
-      <p>Vous pouvez consulter votre profile.</p>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt aspernatur impedit praesentium quibusdam minus doloribus enim distinctio corrupti voluptatem? Quasi recusandae error laboriosam ut deleniti aspernatur exercitationem sit explicabo molestiae.</p>
-      <a [routerLink]="['/profile']">Voir plus</a>
-    </li>
-    <li class="card-html">
-      <a [routerLink]="['/profile']">
-        <p>Vous pouvez aussi consulter votre profile.</p>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt aspernatur impedit praesentium quibusdam minus doloribus enim distinctio corrupti voluptatem? Quasi recusandae error laboriosam ut deleniti aspernatur exercitationem sit explicabo molestiae.</p>
-      </a>
-    </li>
-  </ul>
   <router-outlet></router-outlet>
 </main>
 <footer>
