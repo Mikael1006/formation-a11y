@@ -1,0 +1,4 @@
+<label [attr.for]="id">
+  <ng-content></ng-content>
+</label>
+<input [id]="id" [ngModel]="value()" (ngModelChange)="value.set($event)">
