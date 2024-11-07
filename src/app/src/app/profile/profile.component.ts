@@ -1,6 +1,8 @@
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { InputFieldComponent } from '../ui/input-field/input-field.component';
+import { InputComponent } from '../ui/input/input.component';
 
 @Component({
   selector: 'app-profile',
@@ -8,9 +10,13 @@ import { InputFieldComponent } from '../ui/input-field/input-field.component';
   imports: [
     CommonModule,
     InputFieldComponent,
+    FormsModule,
+    InputComponent,
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProfileComponent {}
+export class ProfileComponent {
+  nom = 'Mikael';
+}

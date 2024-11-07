@@ -1,23 +1,17 @@
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { ChangeDetectionStrategy, Component, input, model } from '@angular/core';
-
-let nextId = 0;
+import { ChangeDetectionStrategy, Component, contentChild } from '@angular/core';
+import { InputComponent } from '../input/input.component';
 
 @Component({
   selector: 'app-input-field',
   standalone: true,
   imports: [
-    CommonModule,
-    FormsModule
+    CommonModule
   ],
   templateUrl: './input-field.component.html',
   styleUrl: './input-field.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputFieldComponent {
-  id = `input-field-${nextId++}`;
-  value = model('');
-
-  required = input(false);
+  inputComponent = contentChild.required(InputComponent);
 }

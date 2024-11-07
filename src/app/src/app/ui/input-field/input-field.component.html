@@ -1,7 +1,7 @@
-<label [attr.for]="id">
+<label [attr.for]="inputComponent().id()">
   <ng-content></ng-content>
-  @if (required()) {
+  @if (inputComponent().elementRef.nativeElement.required) {
     *
   }
 </label>
-<input [id]="id" [ngModel]="value()" (ngModelChange)="value.set($event)" [required]="required()">
+<ng-content select="input"></ng-content>
