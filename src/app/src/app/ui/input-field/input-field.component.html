@@ -1,6 +1,6 @@
 <label [attr.for]="inputComponent().id()">
   <ng-content></ng-content>
-  @if (inputComponent().required()) {
+  @if (inputComponent().controlRequired()) {
     *
   }
 </label>

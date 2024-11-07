@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { booleanAttribute, ChangeDetectionStrategy, Component, ElementRef, inject, input } from '@angular/core';
+import { booleanAttribute, ChangeDetectionStrategy, Component, computed, ElementRef, inject, input } from '@angular/core';
 import { InputFieldComponent } from '../input-field/input-field.component';
-import { ControlContainer, NgControl, NgModel } from '@angular/forms';
+import { ControlContainer, NgControl, NgModel, Validators } from '@angular/forms';
 
 let nextId = 0;
 
@@ -28,5 +28,7 @@ export class InputComponent {
   field: InputFieldComponent = inject(InputFieldComponent);
 
   id = input(`input-${nextId++}`);
-  required = input(false, { transform: booleanAttribute });
+  required = input(undefined, { transform: booleanAttribute });
+
+  controlRequired = computed(() => this.required() ?? this.ngControl?.control?.hasValidator(Validators.required) ?? false);
 }
