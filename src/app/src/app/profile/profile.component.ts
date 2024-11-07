@@ -18,5 +18,7 @@ import { InputComponent } from '../ui/input/input.component';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ProfileComponent {
-  nom = 'Mikael';
+  name = 'Moreau';
+  firstname = 'Mikael';
+  phone = '';
 }
