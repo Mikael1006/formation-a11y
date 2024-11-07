@@ -19,8 +19,8 @@ let nextId = 0;
     '[class.error]': 'field.getHasError()',
     '[attr.aria-invalid]': 'field.getHasError()',
     '[attr.aria-describedby]': 'field.subLabelId + " " + field.errorId',
-    '[required]': 'required()',
-    '[attr.aria-required]]': 'required()',
+    '[required]': 'controlRequired()',
+    '[attr.aria-required]]': 'controlRequired()',
   }
 })
 export class InputComponent {
