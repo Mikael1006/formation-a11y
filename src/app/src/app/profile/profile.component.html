@@ -28,7 +28,7 @@
 
 <h3>Modifier mes informations</h3>
 
-<form>
+<form appFocusFirstErrorFieldOnSubmit>
   <app-input-field>
     Nom
     <input app-input [(ngModel)]="name" name="name" required>
