@@ -1,6 +1,7 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, contentChild } from '@angular/core';
+import { Component, contentChild, inject } from '@angular/core';
 import { InputComponent } from '../input/input.component';
+import { NgForm } from '@angular/forms';
 
 let nextId = 0;
 
@@ -16,6 +17,7 @@ let nextId = 0;
 })
 export class InputFieldComponent {
   inputComponent = contentChild.required(InputComponent);
+  ngForm = inject(NgForm)!;
 
   componentId = nextId++;
   subLabelId = `input-field-subLabel-${this.componentId}`;

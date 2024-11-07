@@ -9,7 +9,7 @@
   <ng-content select="[subLabel]"></ng-content>
 </p>
 <p [id]="errorId" class="error">
-  @if (inputComponent().elementRef.nativeElement.required && !inputComponent().elementRef.nativeElement.value) {
+  @if (inputComponent().elementRef.nativeElement.required && !inputComponent().elementRef.nativeElement.value && ngForm.submitted) {
     <ng-content select="[error]"></ng-content>
   }
 </p>
