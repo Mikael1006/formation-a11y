@@ -2,6 +2,8 @@ import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, contentChild } from '@angular/core';
 import { InputComponent } from '../input/input.component';
 
+let nextId = 0;
+
 @Component({
   selector: 'app-input-field',
   standalone: true,
@@ -14,4 +16,6 @@ import { InputComponent } from '../input/input.component';
 })
 export class InputFieldComponent {
   inputComponent = contentChild.required(InputComponent);
+
+  subLabelId = `input-field-subLabel-${nextId++}`;
 }
