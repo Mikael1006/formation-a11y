@@ -25,11 +25,12 @@ nav > ul {
   }
   margin: 0;
   padding-left: 20px;
-}
 
- a {
-  text-decoration: unset;
- }
+  a {
+   text-decoration: unset;
+   color: unset;
+  }
+}
 
 .sr-only {
 	border: 0 !important;
