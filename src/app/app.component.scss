@@ -40,7 +40,8 @@ nav > ul {
     margin-right: 20px;
     position: relative;
   }
-  > li.css-card > a {
+  > li.css-card > a::before {
+    content: "";
     position: absolute;
     top: 0;
     left: 0;
