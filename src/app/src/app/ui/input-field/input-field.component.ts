@@ -1,7 +1,7 @@
 import { CommonModule } from '@angular/common';
 import { Component, contentChild, inject } from '@angular/core';
 import { InputComponent } from '../input/input.component';
-import { NgForm, Validators } from '@angular/forms';
+import { NgForm } from '@angular/forms';
 
 let nextId = 0;
 
