@@ -30,26 +30,45 @@
 
 <form appFocusFirstErrorFieldOnSubmit>
   <app-input-field>
-    Nom
-    <input app-input [(ngModel)]="name" name="name" required>
-    <ng-container error>
-      Veuillez renseignez votre prénom, ce champs est obligatoire
-    </ng-container>
-  </app-input-field>
-
-  <app-input-field>
     Prénom
-    <input app-input [(ngModel)]="firstname" name="firstname" required>
+    <input app-input [(ngModel)]="firstname" name="firstname">
     <ng-container error>
-      Veuillez renseignez votre prénom, ce champs est obligatoire
+      Veuillez renseignez votre prénom, ce champ est obligatoire
     </ng-container>
   </app-input-field>
 
   <app-input-field>
-    Tel
-    <input app-input [(ngModel)]="phone" name="phone">
+    Nom
+    <input app-input [(ngModel)]="name" name="name">
+    <ng-container error>
+      Veuillez renseignez votre prénom, ce champ est obligatoire
+    </ng-container>
+  </app-input-field>
+
+  <app-input-field>
+    Email
+    <input app-input [(ngModel)]="email" name="email" required>
+    <ng-container error>
+      Veuillez renseignez votre email, ce champ est obligatoire
+    </ng-container>
+  </app-input-field>
+
+  <app-input-field>
+    Téléphone
+    <input app-input [(ngModel)]="phone" name="phone" required>
     <ng-container subLabel>
-      01 02 03 04 05
+      XX/XX/XX/XX/XX
+    </ng-container>
+    <ng-container error>
+      Veuillez renseignez votre téléphone, ce champ est obligatoire
+    </ng-container>
+  </app-input-field>
+
+  <app-input-field>
+    Message
+    <input app-input [(ngModel)]="message" name="message" required>
+    <ng-container error>
+      Veuillez renseignez votre message, ce champ est obligatoire
     </ng-container>
   </app-input-field>
 

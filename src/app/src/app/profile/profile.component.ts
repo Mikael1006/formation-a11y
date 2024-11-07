@@ -21,6 +21,8 @@ import { FocusFirstErrorFieldOnSubmitDirective } from '../a11y/focusFirstErrorFi
 })
 export class ProfileComponent {
   name = '';
+  email = '';
+  message = '';
   firstname = 'Mikael';
   phone = '';
 }
