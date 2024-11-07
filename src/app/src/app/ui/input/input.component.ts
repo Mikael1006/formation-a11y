@@ -16,6 +16,8 @@ let nextId = 0;
   changeDetection: ChangeDetectionStrategy.OnPush,
   host: {
     '[attr.id]': 'id',
+    '[class.error]': 'field.getHasError()',
+    '[attr.aria-invalid]': 'field.getHasError()',
     '[attr.aria-describedby]': 'field.subLabelId + " " + field.errorId',
   }
 })
