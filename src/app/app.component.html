@@ -6,10 +6,10 @@
         <a [routerLink]="['/']">{{ title }}</a>
       </li>
       <li>
-        <a [routerLink]="['/patterns']" routerLinkActive="active" appAriaCurrentPage #rla="routerLinkActive">Patterns</a>
+        <a [routerLink]="['/patterns']" routerLinkActive="active" appAriaCurrentPage>Patterns</a>
       </li>
       <li>
-        <a [routerLink]="['/profile']" routerLinkActive="active" appAriaCurrentPage #rla="routerLinkActive">Profile</a>
+        <a [routerLink]="['/profile']" routerLinkActive="active" appAriaCurrentPage>Profile</a>
       </li>
     </ul>
   </nav>
@@ -20,12 +20,12 @@
     <li class="css-card">
       <p>Vous pouvez explorer les patterns.</p>
       <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Deserunt officia, maxime molestias qui asperiores iusto eos ipsam magni, labore eum saepe totam placeat in velit quo, eveniet aliquam atque cumque.</p>
-      <a [routerLink]="['/patterns']" routerLinkActive="active" #rla="routerLinkActive">Voir plus</a>
+      <a [routerLink]="['/patterns']">Voir plus</a>
     </li>
-    <li>
+    <li (click)="onCardClick()">
       <p>Vous pouvez consulter votre profile.</p>
       <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Incidunt aspernatur impedit praesentium quibusdam minus doloribus enim distinctio corrupti voluptatem? Quasi recusandae error laboriosam ut deleniti aspernatur exercitationem sit explicabo molestiae.</p>
-      <a [routerLink]="['/profile']" routerLinkActive="active" #rla="routerLinkActive">Voir plus</a>
+      <a [routerLink]="['/profile']">Voir plus</a>
     </li>
   </ul>
   <router-outlet></router-outlet>

@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { Component, inject } from '@angular/core';
+import { Router, RouterModule, RouterOutlet } from '@angular/router';
 import { AriaCurrentPageDirective } from './src/app/a11y/aria-current-page.directive';
 
 @Component({
@@ -11,4 +11,8 @@ import { AriaCurrentPageDirective } from './src/app/a11y/aria-current-page.direc
 })
 export class AppComponent {
   title = 'formation-a11y';
+  router = inject(Router);
+  onCardClick() {
+    this.router.navigate(["/profile"]);
+  }
 }
