@@ -2,11 +2,17 @@ header {
   background-color: azure;
   display: flex;
   padding: 20px;
+  .home-img {
+    width: 100px;
+  }
 }
 
 footer {
   background-color: beige;
   padding: 20px;
+  .img-footer {
+    width: 100px;
+  }
 }
 
 main {
@@ -17,6 +23,7 @@ nav > ul {
   flex: 1;
   list-style: none;
   display: flex;
+  align-items: center;
   > li:not(:last-child) {
     margin-right: 12px;
     a.active {

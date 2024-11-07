@@ -3,7 +3,10 @@
   <nav role="navigation" arial-label="menu principal">
     <ul>
       <li>
-        <a [routerLink]="['/cards']" routerLinkActive="active" appAriaCurrentPage>Cards</a>
+        <a [routerLink]="['/cards']" routerLinkActive="active" appAriaCurrentPage>
+          <img class="home-img" src="a11y.jpeg" aria-hidden="true"/>
+          <span class="sr-only">Page d'accueil</span>
+        </a>
       </li>
       <li>
         <a [routerLink]="['/patterns']" routerLinkActive="active" appAriaCurrentPage>Patterns</a>
@@ -22,4 +25,5 @@
   <p>
     Contact: mikael.matpadoa-group.com
   </p>
+  <img class="img-footer" alt="" src="a11y.jpeg"/>
 </footer>
