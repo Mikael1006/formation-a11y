@@ -31,5 +31,8 @@ export class InputComponent {
   id = input(`input-${nextId++}`);
   required = input(undefined, { transform: booleanAttribute });
 
+  /**
+   * Handle template driven form with input and reactive form with hasValidator
+   */
   controlRequired = computed(() => this.required() ?? this.ngControl?.control?.hasValidator(Validators.required) ?? false);
 }
