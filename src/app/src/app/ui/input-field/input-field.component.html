@@ -5,6 +5,11 @@
   }
 </label>
 <ng-content select="input"></ng-content>
-<p [id]="subLabelId">
+<p [id]="subLabelId" class="subLabel">
   <ng-content select="[subLabel]"></ng-content>
+</p>
+<p [id]="errorId" class="error">
+  @if (inputComponent().elementRef.nativeElement.required && !inputComponent().elementRef.nativeElement.value) {
+    <ng-content select="[error]"></ng-content>
+  }
 </p>

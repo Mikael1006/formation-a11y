@@ -27,17 +27,23 @@
 <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero provident deserunt sapiente voluptatibus, exercitationem inventore, modi mollitia alias a dolore ducimus molestiae, atque aspernatur minus sed. Aliquid consequatur laboriosam velit.</p>
 <app-input-field>
   Nom
-  <input app-input [(ngModel)]="name" required>
+  <input app-input [(ngModel)]="name" name="name" required>
+  <ng-container error>
+    Veuillez renseignez votre prénom, ce champs est obligatoire
+  </ng-container>
 </app-input-field>
 
 <app-input-field>
   Prénom
-  <input app-input [(ngModel)]="firstname" required>
+  <input app-input [(ngModel)]="firstname" name="firstname" required>
+  <ng-container error>
+    Veuillez renseignez votre prénom, ce champs est obligatoire
+  </ng-container>
 </app-input-field>
 
 <app-input-field>
   Tel
-  <input app-input [(ngModel)]="phone">
+  <input app-input [(ngModel)]="phone" name="phone">
   <ng-container subLabel>
     01 02 03 04 05
   </ng-container>

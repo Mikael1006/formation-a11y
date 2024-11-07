@@ -12,10 +12,12 @@ let nextId = 0;
   ],
   templateUrl: './input-field.component.html',
   styleUrl: './input-field.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush,
+  // changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class InputFieldComponent {
   inputComponent = contentChild.required(InputComponent);
 
-  subLabelId = `input-field-subLabel-${nextId++}`;
+  componentId = nextId++;
+  subLabelId = `input-field-subLabel-${this.componentId}`;
+  errorId = `input-field-error-${this.componentId}`;
 }
