@@ -24,6 +24,6 @@ export class InputFieldComponent {
   errorId = `input-field-error-${this.componentId}`;
 
   getHasError(): boolean {
-    return this.inputComponent().elementRef.nativeElement.required && !this.inputComponent().elementRef.nativeElement.value && this.ngForm.submitted;
+    return !!this.inputComponent().ngControl.control?.errors && this.ngForm.submitted;
   }
 }
