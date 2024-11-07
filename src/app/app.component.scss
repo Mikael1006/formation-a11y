@@ -27,7 +27,7 @@ nav > ul {
   padding-left: 20px;
 }
 
-.content-blocks {
+.cards {
   list-style: none;
   display: flex;
   margin: 0;
@@ -36,11 +36,12 @@ nav > ul {
     flex:1;
     margin: 0;
     padding: 20px;
+    border: 1px solid black;
+    margin-right: 20px;
   }
 }
 
  a {
-  color: unset;
   text-decoration: unset;
  }
 
