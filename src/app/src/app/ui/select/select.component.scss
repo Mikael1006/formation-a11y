@@ -1,3 +1,11 @@
 :host {
   display: block;
 }
+
+.select-menu {
+  background-color: white;
+}
+
+.select-menu-option-selected {
+  outline: -webkit-focus-ring-color auto 1px;
+}
