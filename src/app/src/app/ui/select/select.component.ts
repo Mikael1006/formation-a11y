@@ -66,6 +66,7 @@ export class SelectComponent implements ControlValueAccessor {
           break;
         default:
           this.keyManager.onKeydown(event);
+          event.preventDefault();
       }
     } else {
       switch(keyCode) {
@@ -76,7 +77,5 @@ export class SelectComponent implements ControlValueAccessor {
         default:
       }
     }
-    event.stopPropagation();
-    event.preventDefault();
   }
 }
