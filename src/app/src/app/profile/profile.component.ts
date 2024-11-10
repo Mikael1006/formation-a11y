@@ -23,10 +23,4 @@ import { SelectFieldComponent } from '../ui/select-field/select-field.component'
   styleUrl: './profile.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class ProfileComponent {
-  name = '';
-  email = '';
-  message = '';
-  firstname = 'Mikael';
-  phone = '';
-}
+export class ProfileComponent {}
