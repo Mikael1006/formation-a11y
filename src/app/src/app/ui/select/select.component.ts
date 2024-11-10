@@ -1,6 +1,6 @@
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, input, signal } from '@angular/core';
 import { FieldControlDirective } from '../field/field-control.directive';
 import { FieldDirective } from '../field/field.directive';
 import { ControlValueAccessor } from '@angular/forms';
@@ -27,6 +27,7 @@ import { ControlValueAccessor } from '@angular/forms';
 export class SelectComponent implements ControlValueAccessor {
   field = inject(FieldDirective);
   fieldControl = inject(FieldControlDirective);
+  options = input<string[]>([]);
 
   isOpen = signal(false);
   value = signal(null);

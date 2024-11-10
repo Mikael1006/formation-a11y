@@ -9,5 +9,10 @@
         [id]="fieldControl.popupId()"
         [attr.aria-labelledby]="field.labelId"
         tabindex="-1">
+        @for (option of options(); track $index) {
+          <div role="option" [id]="fieldControl.id() + '-option-' + $index" class="select-menu-option" [attr.aria-selected]="value() === option">
+            {{ option }}
+          </div>
+        }
   </div>
 </ng-template>
