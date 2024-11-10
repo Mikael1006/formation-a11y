@@ -1,0 +1,12 @@
+<ng-template
+  cdkConnectedOverlay
+  [cdkConnectedOverlayOrigin]="field.elementRef"
+  [cdkConnectedOverlayOpen]="isOpen()"
+>
+  <div class="select-menu"
+        role="listbox"
+        [id]="fieldControl.popupId()"
+        [attr.aria-labelledby]="field.labelId"
+        tabindex="-1">
+  </div>
+</ng-template>

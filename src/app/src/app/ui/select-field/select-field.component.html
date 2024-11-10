@@ -1,10 +1,10 @@
-<label [attr.for]="field.fieldControl().id()" [id]="field.labelId">
+<div [attr.for]="field.fieldControl().id()" [id]="field.labelId">
   <ng-content></ng-content>
   @if (field.fieldControl().controlRequired()) {
     *
   }
-</label>
-<ng-content select="input"></ng-content>
+</div>
+<ng-content select="[app-select]"></ng-content>
 <p [id]="field.subLabelId" class="subLabel">
   <ng-content select="[subLabel]"></ng-content>
 </p>

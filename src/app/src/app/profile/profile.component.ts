@@ -4,6 +4,8 @@ import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { InputFieldComponent } from '../ui/input-field/input-field.component';
 import { InputComponent } from '../ui/input/input.component';
 import { FocusFirstErrorFieldOnSubmitDirective } from '../a11y/focusFirstErrorFieldOnSubmit.directive';
+import { SelectComponent } from '../ui/select/select.component';
+import { SelectFieldComponent } from '../ui/select-field/select-field.component';
 
 @Component({
   selector: 'app-profile',
@@ -14,6 +16,8 @@ import { FocusFirstErrorFieldOnSubmitDirective } from '../a11y/focusFirstErrorFi
     FormsModule,
     InputComponent,
     FocusFirstErrorFieldOnSubmitDirective,
+    SelectComponent,
+    SelectFieldComponent,
   ],
   templateUrl: './profile.component.html',
   styleUrl: './profile.component.scss',

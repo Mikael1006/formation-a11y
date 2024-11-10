@@ -1,18 +1,18 @@
 import { CommonModule } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject } from '@angular/core';
 import { FieldDirective } from '../field/field.directive';
 
 @Component({
-  selector: 'app-input-field',
+  selector: 'app-select-field',
   standalone: true,
   imports: [
-    CommonModule
+    CommonModule,
   ],
-  templateUrl: './input-field.component.html',
-  styleUrl: './input-field.component.scss',
+  templateUrl: './select-field.component.html',
+  styleUrl: './select-field.component.scss',
   // changeDetection: ChangeDetectionStrategy.OnPush,
   hostDirectives: [FieldDirective]
 })
-export class InputFieldComponent {
+export class SelectFieldComponent {
   field = inject(FieldDirective);
 }
