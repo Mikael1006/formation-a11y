@@ -1,6 +1,7 @@
 import { booleanAttribute, computed, Directive, ElementRef, inject, input } from '@angular/core';
 import { NgControl, Validators } from '@angular/forms';
 import { FieldDirective } from './field.directive';
+import { FocusMonitor } from '@angular/cdk/a11y';
 
 let nextId = 0;
 
@@ -21,6 +22,7 @@ export class FieldControlDirective {
   elementRef: ElementRef<HTMLElement> = inject(ElementRef);
   ngControl = inject(NgControl, {optional: true, self: true})!;
   field: FieldDirective = inject(FieldDirective);
+  focusMonitor = inject(FocusMonitor);
 
   fieldControlId: number = nextId++;
   id = input(`field-control-${this.fieldControlId}`);
@@ -31,4 +33,8 @@ export class FieldControlDirective {
    * Handle template driven form with input and reactive form with hasValidator
    */
   controlRequired = computed(() => this.required() ?? this.ngControl?.control?.hasValidator(Validators.required) ?? false);
+
+  constructor() {
+    this.focusMonitor.monitor(this.elementRef).subscribe();
+  }
 }
