@@ -4,10 +4,13 @@
   border: 1px solid black;
 }
 
-.select-menu {
+.select-listbox {
   background-color: white;
+  width: 147px;
+  border: 1px solid black;
+  margin: 0;
 }
 
-.select-menu-option-selected {
+.cdk-option-active {
   outline: -webkit-focus-ring-color auto 1px;
 }

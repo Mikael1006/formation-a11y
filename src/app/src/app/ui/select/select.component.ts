@@ -1,12 +1,11 @@
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, inject, Injector, input, signal, viewChildren } from '@angular/core';
+import { ChangeDetectionStrategy, Component, effect, inject, Injector, input, OnInit, signal, viewChild } from '@angular/core';
 import { FieldControlDirective, fieldControlHostDirective } from '../field/field-control.directive';
 import { FieldDirective } from '../field/field.directive';
 import { ControlValueAccessor } from '@angular/forms';
-import { DOWN_ARROW, ENTER, ESCAPE } from '@angular/cdk/keycodes';
-import { ActiveDescendantKeyManager } from '@angular/cdk/a11y';
-import { SelectOptionDirective } from './select-option.directive';
+import { DOWN_ARROW, ENTER, ESCAPE, TAB } from '@angular/cdk/keycodes';
+import { CdkListbox, CdkListboxModule } from '@angular/cdk/listbox';
 
 @Component({
   selector: 'app-select',
@@ -14,36 +13,36 @@ import { SelectOptionDirective } from './select-option.directive';
   imports: [
     CommonModule,
     OverlayModule,
-    SelectOptionDirective,
+    CdkListboxModule,
   ],
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
   hostDirectives: [fieldControlHostDirective],
   host: {
-    role: 'combobox',
     tabindex: '0',
     ['attr.aria-expanded']: 'isOpen()',
-    ['attr.aria-haspopup']: 'listbox',
-    ['attr.aria-controls']: 'isOpen() ? fieldControl.popupId() : null',
-    '(keydown)': 'onKeydown($event)'
+    ['attr.aria-owns']: 'isOpen() ? fieldControl.popupId() : null',
+    '(keydown)': 'onKeydown($event)',
   }
 })
-export class SelectComponent implements ControlValueAccessor {
+export class SelectComponent implements ControlValueAccessor, OnInit {
   field = inject(FieldDirective);
   fieldControl = inject(FieldControlDirective);
   options = input<string[]>([]);
 
-  selectOptions = viewChildren(SelectOptionDirective);
+  listbox = viewChild(CdkListbox);
   injector = inject(Injector);
 
-  keyManager = new ActiveDescendantKeyManager(this.selectOptions, this.injector);
-
   isOpen = signal(false);
-  value = signal(null);
+  value = signal<any>(null);
 
   constructor() {
     this.fieldControl.ngControl.valueAccessor = this;
+    effect(() => this.listbox()?.focus());
+  }
+  ngOnInit(): void {
+    this.value.set(this.options()[0]);
   }
 
   writeValue(value: any): void {
@@ -64,15 +63,13 @@ export class SelectComponent implements ControlValueAccessor {
         case ESCAPE:
           this.isOpen.set(false);
           break;
-        default:
-          this.keyManager.onKeydown(event);
-          event.preventDefault();
       }
     } else {
       switch(keyCode) {
         case ENTER:
         case DOWN_ARROW:
           this.isOpen.set(true);
+          event.preventDefault();
           break;
         default:
       }

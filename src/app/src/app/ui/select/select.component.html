@@ -1,20 +1,24 @@
+<p class="sr-only">
+  Utiliser la touche Tab ou la flèche bas pour accéder aux suggestions.
+  Confirmer votre choix avec la touche Enter ou fermer la liste des suggestions avec la touche ESC.
+</p>
 {{ value() }}
 <ng-template
   cdkConnectedOverlay
-  [cdkConnectedOverlayOrigin]="field.elementRef"
+  [cdkConnectedOverlayOrigin]="fieldControl.elementRef"
   [cdkConnectedOverlayOpen]="isOpen()"
   [cdkConnectedOverlayDisableClose]="true"
+  (overlayOutsideClick)="isOpen.set(false)"
 >
-  <div class="select-menu"
-        role="listbox"
+  <ul class="select-listbox"
+        cdkListbox
+        [cdkListboxValue]="value()"
         [id]="fieldControl.popupId()"
-        [attr.aria-labelledby]="field.labelId()"
-        [attr.aria-activedescendant]="keyManager.activeItem ? keyManager.activeItem.id() : null"
-        tabindex="-1">
+        [attr.aria-labelledby]="field.labelId()">
         @for (option of options(); track $index) {
-          <div appSelectOption>
+          <li [cdkOption]="option">
             {{ option }}
-          </div>
+          </li>
         }
-  </div>
+      </ul>
 </ng-template>
