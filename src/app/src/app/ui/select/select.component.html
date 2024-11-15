@@ -8,7 +8,7 @@
   <div class="select-menu"
         role="listbox"
         [id]="fieldControl.popupId()"
-        [attr.aria-labelledby]="field.labelId"
+        [attr.aria-labelledby]="field.labelId()"
         [attr.aria-activedescendant]="keyManager.activeItem ? keyManager.activeItem.id() : null"
         tabindex="-1">
         @for (option of options(); track $index) {
