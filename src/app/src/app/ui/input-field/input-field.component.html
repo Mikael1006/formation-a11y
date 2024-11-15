@@ -5,11 +5,5 @@
   }
 </label>
 <ng-content select="input"></ng-content>
-<p [id]="field.subLabelId()" class="subLabel">
-  <ng-content select="[subLabel]"></ng-content>
-</p>
-<p [id]="field.errorId()" class="error">
-  @if (field.getHasError()) {
-    <ng-content select="[error]"></ng-content>
-  }
-</p>
+<ng-content select="p[app-field-sublabel]"></ng-content>
+<ng-content select="p[app-field-error]"></ng-content>

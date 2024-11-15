@@ -33,28 +33,28 @@
   <app-input-field>
     Prénom
     <input app-input ngModel="" name="firstname">
-    <ng-container error>
+    <p app-field-error>
       Veuillez renseignez votre prénom, ce champ est obligatoire
-    </ng-container>
+    </p>
   </app-input-field>
 
   <app-input-field>
     Nom
     <input app-input ngModel="" name="name">
-    <ng-container error>
+    <p app-field-error>
       Veuillez renseignez votre prénom, ce champ est obligatoire
-    </ng-container>
+    </p>
   </app-input-field>
 
   <app-select-field>
     Genre
     <app-select ngModel="mm" name="genre" required [options]="['mrs', 'mm']" id="test"/>
-    <ng-container subLabel>
+    <p app-field-sublabel>
       MR/MM
-    </ng-container>
-    <ng-container error>
+    </p>
+    <p app-field-error>
       Veuillez renseignez votre genre, ce champ est obligatoire
-    </ng-container>
+    </p>
   </app-select-field>
 
   <fieldset>
@@ -63,24 +63,30 @@
     <app-input-field>
       Jour
       <input app-input ngModel="" name="jour">
-      <ng-container error>
+      <p app-field-error>
         Veuillez renseignez votre jour, ce champ est obligatoire
+      </p>
+      <ng-container error>
       </ng-container>
     </app-input-field>
 
     <app-input-field>
       mois
       <input app-input ngModel="" name="mois">
-      <ng-container error>
+      <p app-field-error>
         Veuillez renseignez votre mois, ce champ est obligatoire
+      </p>
+      <ng-container error>
       </ng-container>
     </app-input-field>
 
     <app-input-field>
       Année
       <input app-input ngModel="" name="annee">
-      <ng-container error>
+      <p app-field-error>
         Veuillez renseignez votre année, ce champ est obligatoire
+      </p>
+      <ng-container error>
       </ng-container>
     </app-input-field>
   </fieldset>
@@ -88,31 +94,31 @@
   <app-input-field>
     Email
     <input app-input ngModel="" name="email" required>
-    <ng-container error>
+    <p app-field-error>
       Veuillez renseignez votre email, ce champ est obligatoire
-    </ng-container>
-    <ng-container subLabel>
+    </p>
+    <p app-field-sublabel>
       xxx&#64;email.com
-    </ng-container>
+    </p>
   </app-input-field>
 
   <app-input-field>
     Téléphone
     <input app-input ngModel="" name="phone" required>
-    <ng-container subLabel>
+    <p app-field-sublabel>
       XX/XX/XX/XX/XX
-    </ng-container>
-    <ng-container error>
+    </p>
+    <p app-field-error>
       Veuillez renseignez votre téléphone, ce champ est obligatoire
-    </ng-container>
+    </p>
   </app-input-field>
 
   <app-input-field>
     Message
     <input app-input ngModel="" name="message" required>
-    <ng-container error>
+    <p app-field-error>
       Veuillez renseignez votre message, ce champ est obligatoire
-    </ng-container>
+    </p>
   </app-input-field>
 
   <button type="submit">Enregistrer</button>
