@@ -7,6 +7,10 @@ let nextId = 0;
 @Directive({
   selector: '[appField]',
   standalone: true,
+  host: {
+    '[attr.id]': 'id()',
+    '[class.field-error]': 'getHasError()',
+  },
 })
 export class FieldDirective {
   elementRef: ElementRef<HTMLElement> = inject(ElementRef);
