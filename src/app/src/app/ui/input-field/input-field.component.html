@@ -1,14 +1,14 @@
-<label [attr.for]="field.fieldControl().id()" [id]="field.labelId">
+<label [attr.for]="field.fieldControl().id()" [id]="field.labelId()">
   <ng-content></ng-content>
   @if (field.fieldControl().controlRequired()) {
     *
   }
 </label>
 <ng-content select="input"></ng-content>
-<p [id]="field.subLabelId" class="subLabel">
+<p [id]="field.subLabelId()" class="subLabel">
   <ng-content select="[subLabel]"></ng-content>
 </p>
-<p [id]="field.errorId" class="error">
+<p [id]="field.errorId()" class="error">
   @if (field.getHasError()) {
     <ng-content select="[error]"></ng-content>
   }

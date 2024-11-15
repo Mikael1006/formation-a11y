@@ -38,3 +38,8 @@ export class FieldControlDirective {
     this.focusMonitor.monitor(this.elementRef).subscribe();
   }
 }
+
+export const fieldControlHostDirective = {
+  directive: FieldControlDirective,
+  inputs: ['id'],
+};

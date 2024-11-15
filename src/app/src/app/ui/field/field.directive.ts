@@ -1,4 +1,4 @@
-import { contentChild, Directive, ElementRef, inject } from '@angular/core';
+import { computed, contentChild, Directive, ElementRef, inject, input } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { FieldControlDirective } from './field-control.directive';
 
@@ -14,11 +14,17 @@ export class FieldDirective {
   ngForm = inject(NgForm)!;
 
   fieldId = nextId++;
-  labelId = `field-label-${this.fieldId}`;
-  subLabelId = `field-subLabel-${this.fieldId}`;
-  errorId = `field-error-${this.fieldId}`;
+  id = input(`field-${this.fieldId}`);
+  labelId = computed(() => `${this.id()}-label`);
+  subLabelId = computed(() => `${this.id()}-subLabel`);
+  errorId = computed(() => `${this.id()}-error`);
 
   getHasError(): boolean {
     return !!this.fieldControl().ngControl.control?.errors && this.ngForm.submitted;
   }
 }
+
+export const fieldHostDirective = {
+  directive: FieldDirective,
+  inputs: ['id'],
+};

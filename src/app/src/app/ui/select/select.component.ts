@@ -1,7 +1,7 @@
 import { OverlayModule } from '@angular/cdk/overlay';
 import { CommonModule } from '@angular/common';
 import { ChangeDetectionStrategy, Component, inject, Injector, input, signal, viewChildren } from '@angular/core';
-import { FieldControlDirective } from '../field/field-control.directive';
+import { FieldControlDirective, fieldControlHostDirective } from '../field/field-control.directive';
 import { FieldDirective } from '../field/field.directive';
 import { ControlValueAccessor } from '@angular/forms';
 import { DOWN_ARROW, ENTER, ESCAPE } from '@angular/cdk/keycodes';
@@ -19,7 +19,7 @@ import { SelectOptionDirective } from './select-option.directive';
   templateUrl: './select.component.html',
   styleUrl: './select.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  hostDirectives: [FieldControlDirective],
+  hostDirectives: [fieldControlHostDirective],
   host: {
     role: 'combobox',
     tabindex: '0',

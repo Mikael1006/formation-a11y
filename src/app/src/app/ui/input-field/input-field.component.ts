@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject } from '@angular/core';
-import { FieldDirective } from '../field/field.directive';
+import { FieldDirective, fieldHostDirective } from '../field/field.directive';
 
 @Component({
   selector: 'app-input-field',
@@ -11,7 +11,7 @@ import { FieldDirective } from '../field/field.directive';
   templateUrl: './input-field.component.html',
   styleUrl: './input-field.component.scss',
   // changeDetection: ChangeDetectionStrategy.OnPush,
-  hostDirectives: [FieldDirective]
+  hostDirectives: [fieldHostDirective]
 })
 export class InputFieldComponent {
   field = inject(FieldDirective);
