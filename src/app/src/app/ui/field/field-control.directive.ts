@@ -41,5 +41,5 @@ export class FieldControlDirective {
 
 export const fieldControlHostDirective = {
   directive: FieldControlDirective,
-  inputs: ['id'],
+  inputs: ['id', 'required'],
 };
