@@ -15,7 +15,7 @@ let nextId = 0;
     '[attr.aria-labelledby]': 'field.labelId()',
     '[attr.aria-describedby]': 'field.subLabelId() + " " + field.errorId()',
     '[required]': 'controlRequired()',
-    '[attr.aria-required]]': 'controlRequired()',
+    '[attr.aria-required]': 'controlRequired()',
   },
 })
 export class FieldControlDirective {
